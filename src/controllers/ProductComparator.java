@@ -6,7 +6,7 @@ import java.util.*;
 public class ProductComparator 
 {
 	/**
-	 * Finds the Ingredients that are common amoung the two Products. Returns the Ingredients are found in both
+	 * Finds the Ingredients that are common among the two Products. Returns the Ingredients are found in both
 	 * productOne and productTwo. Only Products of the same type can be compared. 
 	 * For example, a user can only compare a SkincareProduct against another SkincareProduct.
 	 * If the Products are not of the same type, then a ProductException is thrown.
@@ -16,9 +16,28 @@ public class ProductComparator
 	 * @return Linked list containing ingredients that are only common among the two products.
 	 * 
 	 */
+
+
 	public LinkedList<Ingredient> getCommonIngredients(Product productOne, Product productTwo) throws ProductException
 	{
-		return null;
+		LinkedList<Ingredient> list = new LinkedList<Ingredient>();
+		int i, j, common;
+		if (productOne.isSameType(productTwo)) {
+			common = 0;
+			for (i = 0; i < productOne.getIngredients().size(); i++) {
+				if (productTwo.containsIngredient(productOne.getIngredients().get(i))) {
+					list.add(productOne.getIngredients().get(i));
+					common ++;
+				}
+			}
+			if (common == 0) {
+				return null;
+			}
+		}
+		else {
+			throw new ProductException();
+		}
+		return list;
 	}
 
 	/**
@@ -35,7 +54,25 @@ public class ProductComparator
 	 */
 	public LinkedList<Ingredient> getUniqueIngredients(Product productOne, Product productTwo) throws ProductException
 	{
-		return null;
+		LinkedList<Ingredient> list = new LinkedList<Ingredient>();
+		int i, j, uniq;
+		if (productOne.isSameType(productTwo)) {
+			uniq = 0;
+			for (i = 0; i < productOne.getIngredients().size(); i++) {
+				if (!productTwo.containsIngredient(productOne.getIngredients().get(i))) {
+					list.add(productOne.getIngredients().get(i));
+					uniq ++;
+		
+				}
+			}
+			if (uniq == 0) {
+				return null;
+			}
+		}
+		else {
+			throw new ProductException();
+		}
+		return list;
 	}
 	
 	
