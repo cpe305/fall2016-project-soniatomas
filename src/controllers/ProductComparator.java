@@ -54,25 +54,37 @@ public class ProductComparator
 	 */
 	public LinkedList<Ingredient> getUniqueIngredients(Product productOne, Product productTwo) throws ProductException
 	{
-		LinkedList<Ingredient> list = new LinkedList<Ingredient>();
+		LinkedList<Ingredient> listone = productOne.getIngredients();
+		LinkedList<Ingredient> listtwo = productTwo.getIngredients();
+		LinkedList<Ingredient> returnList = new LinkedList<Ingredient>();
 		int i, j, uniq;
 		if (productOne.isSameType(productTwo)) {
 			uniq = 0;
-			for (i = 0; i < productOne.getIngredients().size(); i++) {
-				if (!productTwo.containsIngredient(productOne.getIngredients().get(i))) {
-					list.add(productOne.getIngredients().get(i));
-					uniq ++;
-		
+			for (i = 0; i < listone.size(); i++) {
+				if (listone.contains(listtwo.get(i))) {
+					Ingredient rm = listtwo.get(i);
+					listone.remove(rm);
+					listtwo.remove(rm);
+				}
+				else {
+					uniq++;
 				}
 			}
 			if (uniq == 0) {
 				return null;
 			}
+			
+			for (i = 0; i < listone.size(); i++) {
+				returnList.add(listone.get(i));
+			}
+			for (j = 0; j < listtwo.size();j++) {
+				returnList.add(listtwo.get(j));
+			}
 		}
 		else {
 			throw new ProductException();
 		}
-		return list;
+		return returnList;
 	}
 	
 	
