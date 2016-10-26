@@ -20,6 +20,11 @@ public class SkincareProduct implements Product
 	{
 		ingredients.put(ingredient, ingredient);
 	}
+	public void addIngredient(String ingredientName)
+	{
+		Ingredient newIngredient = new Ingredient(ingredientName);
+		ingredients.put(newIngredient, newIngredient);
+	}
 	public LinkedList<Ingredient> getIngredients()
 	{
 		LinkedList<Ingredient> ingredientsToReturn = new LinkedList<Ingredient>(ingredients.values());

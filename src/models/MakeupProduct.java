@@ -16,10 +16,6 @@ public class MakeupProduct implements Product {
 	{
 		return new String(name);
 	}
-	public void addIngredient(Ingredient ingredient)
-	{
-		ingredients.put(ingredient, ingredient);
-	}
 	public LinkedList<Ingredient> getIngredients()
 	{
 		LinkedList<Ingredient> ingredientsToReturn = new LinkedList<Ingredient>(ingredients.values());
@@ -32,6 +28,15 @@ public class MakeupProduct implements Product {
 	public boolean isSameType(Product product)
 	{
 		return this.getClass().equals(product.getClass());
+	}
+	public void addIngredient(Ingredient ingredient)
+	{
+		ingredients.put(ingredient, ingredient);
+	}
+	public void addIngredient(String ingredientName)
+	{
+		Ingredient newIngredient = new Ingredient(ingredientName);
+		ingredients.put(newIngredient, newIngredient);
 	}
 	/*private String name;
 	private LinkedList<Ingredient> ingredients;

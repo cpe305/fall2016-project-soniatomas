@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import org.junit.Test;
 
 import models.*;
-import java.util.LinkedList;
 
 public class SkincareProductTest {
 
