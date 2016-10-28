@@ -2,8 +2,12 @@ package models;
 
 import java.util.*;
 
+
+
+
 public class ProductHistory {
-	private HashMap<String, Product> productHistory;
+	private HashMap<String, MakeupProduct> makeupProductHistory = new HashMap<String, MakeupProduct>();
+	private HashMap<String, SkincareProduct> skincareProductHistory = new HashMap<String, SkincareProduct>();
 	
 	/**
 	 * Constructor for ProductHistory
@@ -11,34 +15,84 @@ public class ProductHistory {
 	 */
 	public ProductHistory()
 	{
-		
+		this.makeupProductHistory = makeupProductHistory;
+		this.skincareProductHistory = skincareProductHistory;
 	}
 	/**
-	 * Adds a product to productHistory;
-	 * @param product
+	 * Adds a makeup product to productHistory;
+	 * @param string
 	 */
-	public void addProduct(Product product)
+	
+	public void addMakeupProduct(String string, MakeupProduct mp)
 	{
-		
+		makeupProductHistory.put(string, mp);
 	}
+	
+	
 	/**
-	 * gets a product from ProductHistory
-	 * @param productName
+	 * Adds a skincare product to productHistory;
+	 * @param string
+	 */
+	
+	public void addSkincareProduct(String string, SkincareProduct sp)
+	{
+		skincareProductHistory.put(string, sp);
+	} 
+	
+	/**
+	 * gets a makeup product from ProductHistory
+	 * @param makeup product
 	 * @return Product or null if Product cannot be found in ProductHistory
 	 */
-	public Product getProduct(String productName)
+	public Product getMakeupProduct(MakeupProduct mp)
 	{
-		return null;
+		if (makeupProductHistory.containsKey(mp)) {
+			MakeupProduct p = makeupProductHistory.get(mp);
+			return p;
+		} 
+		else {
+			return null;
+		}
+	}
+	
+	/**
+	 * gets a skincare product from ProductHistory
+	 * @param skincare product
+	 * @return Product or null if Product cannot be found in ProductHistory
+	 */
+	public Product getSkincareProduct(SkincareProduct sp)
+	{
+		if (skincareProductHistory.containsKey(sp)) {
+			SkincareProduct p = skincareProductHistory.get(sp);
+			return p;
+		} 
+		else {
+			return null;
+		}
 	}
 	/**
-	 * removes a Product form ProductHistory
-	 * returns Product 
+	 * removes a skincare Product form ProductHistory 
 	 * @param productName
 	 * @return Product that has been removed or null if Product cannot be found
 	 * in ProductHistory
 	 */
-	public Product removeProduct(String productName)
+	public void removeSkincareProduct(String skinCareProductName)
 	{
-		return null;
+		if (skincareProductHistory.containsKey(skinCareProductName)) {
+			skincareProductHistory.remove(skinCareProductName);
+		}
 	}
+
+	/**
+	 * removes a makeup Product form ProductHistory 
+	 * @param productName
+	 * @return Product that has been removed or null if Product cannot be found
+	 * in ProductHistory
+	 */
+	public void removeMakeupProduct(String makeupProductName)
+	{
+		if (makeupProductHistory.containsKey(makeupProductName)) {
+			makeupProductHistory.remove(makeupProductName);
+		}
+	}	
 }
