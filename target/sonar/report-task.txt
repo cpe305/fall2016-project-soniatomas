@@ -1,0 +1,5 @@
+projectKey=soniatomas.cpe305fall2016project:skinsort
+serverUrl=http://smartr.cs.hm.edu:9000
+dashboardUrl=http://smartr.cs.hm.edu:9000/dashboard/index/soniatomas.cpe305fall2016project:skinsort
+ceTaskId=AVgmYg_N_T_maYcFa5gp
+ceTaskUrl=http://smartr.cs.hm.edu:9000/api/ce/task?id=AVgmYg_N_T_maYcFa5gp
