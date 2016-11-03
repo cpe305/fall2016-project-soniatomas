@@ -2,9 +2,11 @@ package main.java.soniatomas.cpe305fall2016project.skinsort;
 
 public class Ingredient {
   private String name;
+  public Rating rating;
 
   public Ingredient(String name) {
     this.name = new String(name.toLowerCase());
+    this.rating = new Rating();
   }
 
   public String getName() {

@@ -7,10 +7,12 @@ public class MakeupProduct implements Product {
 
   private String name;
   private HashMap<Ingredient, Ingredient> ingredients;
+  public Rating rating;
 
   public MakeupProduct(String name) {
     this.name = new String(name.toLowerCase());
     this.ingredients = new HashMap<Ingredient, Ingredient>();
+    this.rating = new Rating();
   }
 
   public String getName() {
