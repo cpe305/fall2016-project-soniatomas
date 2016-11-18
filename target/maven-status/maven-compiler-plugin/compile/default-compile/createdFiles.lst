@@ -1,11 +1,8 @@
-main/java/soniatomas/cpe305fall2016project/skinsort/User.class
-main/java/soniatomas/cpe305fall2016project/skinsort/ProductComparator.class
-main/java/soniatomas/cpe305fall2016project/skinsort/Rating.class
+main/java/soniatomas/cpe305fall2016project/skinsort/UserInformation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Ingredient.class
+main/java/soniatomas/cpe305fall2016project/skinsort/User.class
+main/java/soniatomas/cpe305fall2016project/skinsort/Rating.class
 main/java/soniatomas/cpe305fall2016project/skinsort/PasswordHandler.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ProductHistory.class
-main/java/soniatomas/cpe305fall2016project/skinsort/MakeupProduct.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Product.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ProductException.class
-main/java/soniatomas/cpe305fall2016project/skinsort/SkincareProduct.class
-main/java/soniatomas/cpe305fall2016project/skinsort/UserInformation.class
