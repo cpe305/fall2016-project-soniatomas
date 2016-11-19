@@ -5,39 +5,37 @@ import org.mongodb.morphia.annotations.Embedded;
 
 @Entity
 public class User extends DatabaseEntity {
-	
+
   private String firstName;
   private String lastName;
   private String password;
   private String email;
   @Embedded
-	private ProductHistory productHistory;
+  private ProductHistory productHistory;
 
-	public User(String email, String password, String firstName, String lastName){
-		productHistory = new ProductHistory();
-		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.password = password;
-	}
-	
-	public User(String email, String password)
-	{
-	  productHistory = new ProductHistory();
+  public User(String email, String password, String firstName, String lastName) {
+    productHistory = new ProductHistory();
+    this.email = email;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.password = password;
+  }
+
+  public User(String email, String password) {
+    productHistory = new ProductHistory();
     this.email = email;
     this.password = password;
     this.firstName = " ";
     this.lastName = " ";
-	}
-	
-	public User()
-	{
-	  productHistory = new ProductHistory();
+  }
+
+  public User() {
+    productHistory = new ProductHistory();
     this.email = " ";
     this.firstName = " ";
     this.lastName = " ";
     this.password = " ";
-	}
+  }
 
   /**
    * returns User's First Name
@@ -84,9 +82,8 @@ public class User extends DatabaseEntity {
   public void setPassword(String password) {
     this.password = password;
   }
-  
-  public boolean isPasswordEqualTo(String password)
-  {
+
+  public boolean isPasswordEqualTo(String password) {
     return this.password.equals(password);
   }
 
@@ -107,13 +104,12 @@ public class User extends DatabaseEntity {
   public void setEmail(String email) {
     this.email = email;
   }
-  
-  public ProductHistory getProductHistory()
-  {
+
+  public ProductHistory getProductHistory() {
     return this.productHistory;
   }
-  public void setProductHistory(ProductHistory productHistory)
-  {
+
+  public void setProductHistory(ProductHistory productHistory) {
     this.productHistory = productHistory;
   }
 }

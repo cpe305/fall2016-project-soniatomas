@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import main.java.soniatomas.cpe305fall2016project.skinsort.Ingredient;
+import main.java.soniatomas.cpe305fall2016project.skinsort.Rating;
 
 public class IngredientTest {
 
@@ -31,10 +32,26 @@ public class IngredientTest {
 	public void TestIsEqualToFalse() {
 		Ingredient cocos_nucifera = new Ingredient("Cocos Nucifera");
 		Ingredient water = new Ingredient("water");
-		assertEquals(false, water.isEqualTo(cocos_nucifera));
-		
+		assertEquals(false, water.isEqualTo(cocos_nucifera));	
+	}
+	
+	@Test 
+	public void TestGetRating() {
+	  Ingredient water = new Ingredient("Water");
+	  Rating rating = water.getRating();
+	  assertEquals(0.0, rating.getSystemRating(), 0);
+    assertEquals(0.0, rating.getUserRating(), 0);
 	}
 
-	
+	@Test 
+  public void TestSetRating() {
+    Ingredient water = new Ingredient("Water");
+    Rating rating = new Rating();
+    rating.setSystemRating(4.4);
+    rating.setUserRating(7.9);
+    water.setRating(rating);
+    assertEquals(4.4, water.getRating().getSystemRating(), 0);
+    assertEquals(7.9, water.getRating().getUserRating(), 0);
+  }
 
 }

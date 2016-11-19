@@ -9,11 +9,12 @@ public class CreateNewUser implements Operation {
       String password = parameters.get(1);
       String firstName = parameters.get(2);
       String lastName = parameters.get(3);
-      
+
       User newUser = new User(email, password, firstName, lastName);
       if (DatabaseManager.getInstance().saveNewUserToDatabase(newUser))
         return true;
-      else return false; 
+      else
+        return false;
     }
     return false;
   }

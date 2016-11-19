@@ -1,18 +1,16 @@
 package main.java.soniatomas.cpe305fall2016project.skinsort;
 
 import java.util.Scanner;
-import java.util.ArrayList;
-
 
 public class HomeView implements View {
   private Scanner input;
   private String status;
-  
+
   public HomeView(Scanner scan) {
     this.input = scan;
     this.status = "";
   }
-  
+
   public void display() {
     boolean quit = false;
     int command = 0;
@@ -27,13 +25,13 @@ public class HomeView implements View {
       System.out.println("2) View Account Information");
       System.out.println("3) Logout");
       System.out.println(status);
-      System.out.print("option: " );
+      System.out.print("option: ");
       if (input.hasNextInt())
-          command = input.nextInt();
+        command = input.nextInt();
       else
-          input.next();
+        input.next();
       switch (command) {
-      case 1 : 
+      case 1:
         new ViewHistoryView(input).display();
         break;
       case 2:
@@ -47,12 +45,12 @@ public class HomeView implements View {
         System.out.println("Error: Not a valid command!");
         break;
       }
-    } while(!quit);
-    //System.out.println("Goodbye");
+    } while (!quit);
+    // System.out.println("Goodbye");
   }
+
   public void setStatus(String newStatus) {
     this.status = newStatus;
   }
-  
 
 }

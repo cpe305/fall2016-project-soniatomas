@@ -13,11 +13,12 @@ public class Ingredient {
     this.name = new String(name.toLowerCase());
     this.rating = new Rating();
   }
+
   public Ingredient() {
     this.name = " ";
     this.rating = new Rating();
   }
-  
+
   public String getName() {
     return new String(name);
   }
@@ -26,15 +27,16 @@ public class Ingredient {
     name = name.toLowerCase();
     this.name = name;
   }
+
   public boolean isEqualTo(Ingredient ingredient) {
     return name.equals(ingredient.getName());
   }
-  public void setRating(Rating rating)
-  {
+
+  public void setRating(Rating rating) {
     this.rating = rating;
   }
-  public Rating getRating()
-  {
+
+  public Rating getRating() {
     return this.rating;
   }
 

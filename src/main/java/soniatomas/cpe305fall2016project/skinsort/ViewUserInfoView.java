@@ -6,12 +6,13 @@ public class ViewUserInfoView implements View {
   private Scanner input;
   private ViewUserInfo viewUserInfo;
   private String status;
-  
+
   public ViewUserInfoView(Scanner scan) {
     this.input = scan;
     viewUserInfo = new ViewUserInfo(this);
     status = "";
   }
+
   public void display() {
     String userFirstName = SystemData.getInstance().getUser().getFirstName();
     String userLastName = SystemData.getInstance().getUser().getLastName();
@@ -23,14 +24,14 @@ public class ViewUserInfoView implements View {
     int command = 0;
     do {
       System.out.println("1) Go to Home Screen");
-      System.out.print("option: " );
+      System.out.print("option: ");
       if (input.hasNextInt())
         command = input.nextInt();
       else
         input.next();
     } while (command != 1);
   }
-  
+
   public void setStatus(String status) {
     this.status = status;
   }

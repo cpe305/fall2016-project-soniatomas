@@ -6,12 +6,13 @@ public class ViewHistoryView implements View {
   private Scanner input;
   private ViewHistory viewHistory;
   private String status;
-  
+
   public ViewHistoryView(Scanner scan) {
     this.input = scan;
     viewHistory = new ViewHistory(this);
     status = "";
   }
+
   public void display() {
     String userFirstName = SystemData.getInstance().getUser().getFirstName();
     String userLastName = SystemData.getInstance().getUser().getLastName();
@@ -24,15 +25,14 @@ public class ViewHistoryView implements View {
     int command = 0;
     do {
       System.out.println("1) Go to Home Screen");
-      System.out.print("option: " );
+      System.out.print("option: ");
       if (input.hasNextInt())
         command = input.nextInt();
       else
         input.next();
     } while (command != 1);
   }
-  
-  
+
   public void setStatus(String status) {
     this.status = status;
   }

@@ -22,17 +22,15 @@ public class Product {
 
   public Product(String name) {
     this.name = new String(name.toLowerCase());
-    //this.ingredients = new LinkedList<Ingredient>();
     this.ingredients = new ArrayList<Ingredient>();
     this.rating = new Rating();
     this.price = 0.0;
     UpdateDateUpdated();
-    
+
   }
-  
+
   public Product() {
     this.name = " ";
-    //this.ingredients = new LinkedList<Ingredient>();
     this.ingredients = new ArrayList<Ingredient>();
     this.rating = new Rating();
     this.price = 0.0;
@@ -47,7 +45,7 @@ public class Product {
     name = name.toLowerCase();
     this.name = name;
   }
-  
+
   public List<Ingredient> getIngredients() {
     return ingredients;
   }
@@ -70,59 +68,44 @@ public class Product {
     ingredients.add(newIngredient);
     UpdateDateUpdated();
   }
-  
-  public void setIngredients(List<Ingredient> ingredients)
-  {
+
+  public void setIngredients(List<Ingredient> ingredients) {
     this.ingredients = ingredients;
     UpdateDateUpdated();
   }
-  public void setRating(Rating rating)
-  {
+
+  public void setRating(Rating rating) {
     this.rating = rating;
   }
-  public Rating getRating()
-  {
+
+  public Rating getRating() {
     return this.rating;
   }
-  
+
   public double getPrice() {
     return price;
   }
-  
+
   public void setPrice(double price) {
     this.price = price;
-    
+
   }
-  
+
   public String getDateUpdated() {
     return dateUpdated;
   }
-  
-  public void setDateUpdated(String newDate)
-  {
+
+  public void setDateUpdated(String newDate) {
     this.dateUpdated = newDate;
   }
-  private void UpdateDateUpdated()
-  {
-    String months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
-        "Oct", "Nov", "Dec"};
+
+  private void UpdateDateUpdated() {
+    String months[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov",
+        "Dec" };
     GregorianCalendar calendar = new GregorianCalendar();
-    this.dateUpdated = new String(months[calendar.get(Calendar.MONTH)] + " " + calendar.get(Calendar.DATE)
-      + ", " + calendar.get(Calendar.YEAR) + ", " + calendar.get(Calendar.HOUR)
-      + ":" + calendar.get(Calendar.MINUTE) );
+    this.dateUpdated = new String(months[calendar.get(Calendar.MONTH)] + " "
+        + calendar.get(Calendar.DATE) + ", " + calendar.get(Calendar.YEAR) + ", "
+        + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE));
   }
-  /*
-   * private String name; private LinkedList<Ingredient> ingredients;
-   * 
-   * public MakeupProduct(String name, LinkedList<Ingredient> ingredients) {
-   * this.name = new String(name.toLowerCase()); this.ingredients = new
-   * LinkedList<Ingredient>(ingredients); } public String getName() { return new
-   * String(name); } public LinkedList<Ingredient> getIngredients() {
-   * LinkedList<Ingredient> ingredientsToReturn = new
-   * LinkedList<Ingredient>(ingredients); return ingredientsToReturn; } public
-   * boolean containsIngredient(Ingredient ingredient) { return
-   * ingredients.contains(ingredient); } public boolean isSameType(Product
-   * product) { return this.getClass().equals(product.getClass()); }
-   */
 
 }

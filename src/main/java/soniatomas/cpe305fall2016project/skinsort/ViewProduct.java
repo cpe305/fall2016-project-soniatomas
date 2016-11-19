@@ -2,7 +2,7 @@ package main.java.soniatomas.cpe305fall2016project.skinsort;
 
 import java.util.ArrayList;
 
-public class ViewProduct implements Operation {  
+public class ViewProduct implements Operation {
   public boolean execute(ArrayList<String> parameters) {
     String name = parameters.get(0);
     String productInfo = "";

@@ -15,7 +15,6 @@ public class ProductHistory {
    * Constructor for ProductHistory Initializes class variable productHistory.
    */
   public ProductHistory() {
-    //productHistory = new LinkedList<Product>();
     productHistory = new ArrayList<Product>();
   }
 
@@ -61,10 +60,9 @@ public class ProductHistory {
     }
     return false;
   }
-  
-  public List<Product> getProductHistory()
-  {
+
+  public List<Product> getProductHistory() {
     return productHistory;
   }
-  
+
 }
