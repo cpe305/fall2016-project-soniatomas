@@ -12,9 +12,12 @@ public class User extends DatabaseEntity {
   private String email;
   @Embedded
   private ProductHistory productHistory;
+  @Embedded
+  private IngredientLogger ingredientLogger;
 
   public User(String email, String password, String firstName, String lastName) {
-    productHistory = new ProductHistory();
+    this.productHistory = new ProductHistory();
+    this.ingredientLogger = new IngredientLogger();
     this.email = email;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -22,7 +25,8 @@ public class User extends DatabaseEntity {
   }
 
   public User(String email, String password) {
-    productHistory = new ProductHistory();
+    this.productHistory = new ProductHistory();
+    this.ingredientLogger = new IngredientLogger();
     this.email = email;
     this.password = password;
     this.firstName = " ";

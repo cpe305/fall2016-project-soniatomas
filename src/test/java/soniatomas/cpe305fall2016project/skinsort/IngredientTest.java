@@ -54,4 +54,19 @@ public class IngredientTest {
     assertEquals(7.9, water.getRating().getUserRating(), 0);
   }
 
+	@Test 
+  public void TestSetName() {
+    Ingredient water = new Ingredient();
+    water.setName("water");
+    assertEquals("water", water.getName());
+  }
+	
+	@Test 
+  public void TestEquals() {
+    Ingredient waterOne = new Ingredient();
+    waterOne.setName("water");
+    Ingredient waterTwo = new Ingredient("Water");
+    assertEquals(true, waterOne.equals(waterTwo));
+	}
+	
 }

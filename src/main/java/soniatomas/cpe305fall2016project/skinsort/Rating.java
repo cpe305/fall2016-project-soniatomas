@@ -88,7 +88,7 @@ public class Rating {
    * that affect the rating of the Product.
    */
   public void addReference(String reference) {
-    references.add(reference.toLowerCase());
+    references.add(reference);
   }
 
   /**
@@ -99,15 +99,24 @@ public class Rating {
    *         removed, false if it could not be removed.
    */
   public boolean removeReference(String reference) {
-    reference = reference.toLowerCase();
     for (String referenceInList : references) {
-      if (referenceInList.equals(reference))
-        return references.remove(reference);
-      else
-        return false;
+      if (referenceInList.equals(reference)) {
+        return references.remove(reference);   
+      }
     }
     return false;
   }
+  
+  public boolean containsReference(String reference) {
+    boolean referenceFound = false;
+    for (String referenceInList : references) {
+      if (referenceInList.equals(reference)) {
+        return true;  
+      }
+    }
+    return false;
+  }
+  
   public List<String> getReferences() {
     return references;
   }
