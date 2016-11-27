@@ -10,25 +10,22 @@ public class IngredientLogger {
     public IngredientLogger() {
       logger = new HashMap<String, Ingredient>();
     }
-    
-    public boolean addIngredient(String name) {
-      if (!logger.containsKey(name))
-      {
-        logger.put(name, new Ingredient(name));
-        return true;
-      }
-      else return false;
-    }
-    public boolean addIngrediet(Ingredient ingredient) {
+    public void addIngredient(Ingredient ingredient) {
       if (!logger.containsKey(ingredient.getName())) {
         logger.put(ingredient.getName(), ingredient);
+      }
+    }
+    public boolean removeIngredient(Ingredient ingredient) {
+      if (logger.containsKey(ingredient.getName())) {
+        logger.remove(ingredient.getName());
         return true;
       }
       else return false;
     }
-    public boolean removeIngredient(Ingredient ingredient) {
-      if(!logger.containsKey(ingredient.getName())) {
-        logger.remove(ingredient.getName());
+    public boolean removeIngredient(String ingredient) {
+      ingredient = ingredient.toLowerCase();
+      if(logger.containsKey(ingredient)) {
+        logger.remove(ingredient);
         return true;
       }
       else return false;
