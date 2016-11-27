@@ -24,17 +24,9 @@ public class User extends DatabaseEntity {
     this.password = password;
   }
 
-  public User(String email, String password) {
+  public User() {
     this.productHistory = new ProductHistory();
     this.ingredientLogger = new IngredientLogger();
-    this.email = email;
-    this.password = password;
-    this.firstName = " ";
-    this.lastName = " ";
-  }
-
-  public User() {
-    productHistory = new ProductHistory();
     this.email = " ";
     this.firstName = " ";
     this.lastName = " ";
@@ -112,8 +104,17 @@ public class User extends DatabaseEntity {
   public ProductHistory getProductHistory() {
     return this.productHistory;
   }
-
+  
   public void setProductHistory(ProductHistory productHistory) {
     this.productHistory = productHistory;
+  }
+
+  public IngredientLogger getIngredientLogger() {
+    return this.ingredientLogger;
+  }
+  
+  public void setIngredientLogger(IngredientLogger newIngredientLogger) {
+    this.ingredientLogger = newIngredientLogger;
+    
   }
 }

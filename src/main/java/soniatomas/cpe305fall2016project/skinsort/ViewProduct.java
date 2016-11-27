@@ -8,17 +8,17 @@ public class ViewProduct implements Operation {
     String productInfo = "";
     if (SystemData.getInstance().getUser() != null) {
       User user = SystemData.getInstance().getUser();
-      Product product = user.getProductHistory().getProduct(name);
-      productInfo += "Product Name : " + product.getName() + "\n";
-      productInfo += "Date updated : " + product.getDateUpdated() + "\n";
-      productInfo += "Price : " + product.getPrice();
-      productInfo += "Ratings\n";
-      productInfo += "\tUser rating: " + product.getRating().getUserRating() + "\n";
-      productInfo += "\tSystem rating: " + product.getRating().getSystemRating() + "\n";
-      productInfo += "Ingredeints \n";
-      for (Ingredient ingredient : product.getIngredients()) {
-        productInfo += "\t" + ingredient.getName() + "\n";
-      }
+//      Product product = user.getProductHistory().getProduct(name);
+//      productInfo += "Product Name : " + product.getName() + "\n";
+//      productInfo += "Date updated : " + product.getDateUpdated() + "\n";
+//      productInfo += "Price : " + product.getPrice();
+//      productInfo += "Ratings\n";
+//      productInfo += "\tUser rating: " + product.getRating().getUserRating() + "\n";
+//      productInfo += "\tSystem rating: " + product.getRating().getSystemRating() + "\n";
+//      productInfo += "Ingredeints \n";
+//      for (Ingredient ingredient : product.getIngredients()) {
+//        productInfo += "\t" + ingredient.getName() + "\n";
+//      }
       return true;
     }
     return false;
