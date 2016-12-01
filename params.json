@@ -1,0 +1,6 @@
+{
+  "name": "SkinSort",
+  "tagline": "fall2016-project-soniatomas created by GitHub Classroom",
+  "body": "### SkinSort \r\n\r\nProduct monitoring/recommendation desktop application that informs a user if a particular product is good for them based on their previous product usage history and the reviews on their previous products.\r\nRecommendation based on comparing product ingredients and how similar the product is based on previous products used.\r\n\r\nApplication still in progress.\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
