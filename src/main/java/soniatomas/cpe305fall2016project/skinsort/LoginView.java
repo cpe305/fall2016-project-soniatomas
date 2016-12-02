@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LoginView implements View {
-  private Login login;
+  private LoginOperation loginOperation;
   private String status;
   private Scanner input;
 
   public LoginView(Scanner scanner) {
-    this.login = new Login(this);
+//    this.loginOperation = new LoginOperation(this);
     this.input = scanner;
     status = "";
   }
@@ -30,7 +30,7 @@ public class LoginView implements View {
       ArrayList<String> parameters = new ArrayList<String>();
       parameters.add(email);
       parameters.add(password);
-      loginSuccessful = login.execute(parameters);
+//      loginSuccessful = loginOperation.execute(parameters);
       System.out.println(status);
     } while (!loginSuccessful);
   }

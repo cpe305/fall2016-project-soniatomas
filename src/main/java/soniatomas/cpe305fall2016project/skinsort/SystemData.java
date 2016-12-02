@@ -4,11 +4,9 @@ public class SystemData {
 
   private static SystemData systemData;
   private User currentUser;
-  private boolean errorInDatabase;
 
   private SystemData() {
     currentUser = null;
-    errorInDatabase = false;
   }
 
   public static SystemData getInstance() {
@@ -24,14 +22,6 @@ public class SystemData {
 
   public User getUser() {
     return currentUser;
-  }
-
-  public boolean errorInDatabase() {
-    return errorInDatabase;
-  }
-
-  public void setErrorInDatabase(boolean value) {
-    errorInDatabase = value;
   }
 
 }

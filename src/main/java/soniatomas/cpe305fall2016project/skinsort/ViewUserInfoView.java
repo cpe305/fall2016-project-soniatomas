@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class ViewUserInfoView implements View {
   private Scanner input;
-  private ViewUserInfo viewUserInfo;
+  private ViewUserAccountOperation viewUserAccountOperation;
   private String status;
 
   public ViewUserInfoView(Scanner scan) {
     this.input = scan;
-    viewUserInfo = new ViewUserInfo(this);
+ //   viewUserAccountOperation = new ViewUserAccountOperation(this);
     status = "";
   }
 
@@ -18,7 +18,7 @@ public class ViewUserInfoView implements View {
     String userLastName = SystemData.getInstance().getUser().getLastName();
     System.out.println("\nVIEW USER INFO\n");
     System.out.println("Account User: " + userFirstName + " " + userLastName + "\n");
-    viewUserInfo.execute(null);
+    //viewUserAccountOperation.execute(null);
     System.out.println(status);
     System.out.println();
     int command = 0;

@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class ViewHistoryView implements View {
   private Scanner input;
-  private ViewHistory viewHistory;
   private String status;
 
   public ViewHistoryView(Scanner scan) {
     this.input = scan;
-    viewHistory = new ViewHistory(this);
+    //viewHistory = new ViewHistory(this);
     status = "";
   }
 
@@ -19,7 +18,7 @@ public class ViewHistoryView implements View {
     System.out.println();
     System.out.println("VIEW HISTORY\n");
     System.out.println("Account User: " + userFirstName + " " + userLastName + "\n");
-    viewHistory.execute(null);
+    //viewHistory.execute(null);
     System.out.println(status);
     System.out.println();
     int command = 0;
