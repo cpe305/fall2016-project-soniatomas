@@ -2,13 +2,11 @@ package main.java.soniatomas.cpe305fall2016project.skinsort;
 
 import java.util.Scanner;
 
-public class HomeView implements View {
+public class HomeView extends View {
   private Scanner input;
-  private String status;
 
   public HomeView(Scanner scan) {
     this.input = scan;
-    this.status = "";
   }
 
   public void display() {
@@ -24,7 +22,6 @@ public class HomeView implements View {
       System.out.println("1) View Product History");
       System.out.println("2) View Account Information");
       System.out.println("3) Logout");
-      System.out.println(status);
       System.out.print("option: ");
       if (input.hasNextInt())
         command = input.nextInt();
@@ -35,7 +32,6 @@ public class HomeView implements View {
         new ViewHistoryView(input).display();
         break;
       case 2:
-        System.out.println("View Account Information");
         new ViewUserInfoView(input).display();
         break;
       case 3:
@@ -46,11 +42,6 @@ public class HomeView implements View {
         break;
       }
     } while (!quit);
-    // System.out.println("Goodbye");
-  }
-
-  public void setStatus(String newStatus) {
-    this.status = newStatus;
   }
 
 }

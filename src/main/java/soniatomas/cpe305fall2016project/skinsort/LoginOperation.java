@@ -17,7 +17,7 @@ public class LoginOperation extends Observable implements Operation {
   }
 
   public HashMap<String, Object> execute(HashMap<String, String> parameters) {
-    operationVariables.put("status", "DATABASE ERROR");
+    operationVariables.put("status", "DATABASE_ERROR");
     if (!DatabaseManager.getInstance().errorInDatabase()) {
       String email = parameters.get("email");
       String password = parameters.get("password");

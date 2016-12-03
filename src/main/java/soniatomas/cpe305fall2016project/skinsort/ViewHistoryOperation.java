@@ -24,11 +24,6 @@ public class ViewHistoryOperation extends Observable implements Operation  {
     if (currentUser != null) {
       operationVariables.put("products", currentUser.getProductHistory().getProductHistory());
       operationVariables.put("status", "SUCCESS");
-//      for (Product product : currentUser.getProductHistory().getProductHistory()) {  
-//        history += "Product name: " + product.getName() + "\t";
-//        history += product.getDateUpdated() + "\n\n";
-//        
-//      }
     }
     return operationVariables;
   }

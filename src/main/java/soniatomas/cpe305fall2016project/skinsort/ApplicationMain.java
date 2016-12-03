@@ -17,7 +17,7 @@ public class ApplicationMain {
       System.out.println("Skin Sort");
       System.out.println("Please enter the number of task you would like to do");
       System.out.println("1) Login");
-      // System.out.println("2) Create New Account");
+      System.out.println("2) Create New Account");
       System.out.println("3) Close Application");
       System.out.print("Option: ");
       if (input.hasNextInt())
@@ -32,11 +32,10 @@ public class ApplicationMain {
         homeView = new HomeView(input);
         homeView.display();
         break;
-      // case 2:
-      // CreateNewAccountView createAccountView = new AccountView(input);
-      // createAccountView.display();
-      // System.out.print("Create new user account");
-      // break;
+      case 2:
+        CreateNewUserView createAccountView = new CreateNewUserView(input);
+        createAccountView.display();
+        break;
       case 3:
         System.exit(0);
         break;
@@ -45,9 +44,9 @@ public class ApplicationMain {
       }
 
     } while (command != 3);
-    // HomeView homeView = new HomeView(input);
-    // homeView.display();
-    // System.out.println("GoodBye!!!");
+     homeView = new HomeView(input);
+     homeView.display();
+     System.out.println("GoodBye!!!");
   }
 
 }

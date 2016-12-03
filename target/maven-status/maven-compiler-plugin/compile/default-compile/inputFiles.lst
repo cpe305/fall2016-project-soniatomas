@@ -9,6 +9,7 @@
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/SystemData.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/Ingredient.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/View.java
+/Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/InputValidator.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/DatabaseEntity.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/CreateNewUserOperation.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/IngredientLogger.java
@@ -20,9 +21,11 @@
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/DatabaseException.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/User.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/LoginOperation.java
+/Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/RatingUpdater.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/LoginView.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/ApplicationMain.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/ProductException.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/SaveToDatabaseTestDriver.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/ViewUserInfoView.java
 /Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/PasswordHandler.java
+/Users/Sonia/Desktop/EclipseWorkspace/workspace/fall2016-project-soniatomas/src/main/java/soniatomas/cpe305fall2016project/skinsort/CreateNewUserView.java

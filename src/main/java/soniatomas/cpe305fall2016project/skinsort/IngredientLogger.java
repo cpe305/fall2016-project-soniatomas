@@ -2,9 +2,14 @@ package main.java.soniatomas.cpe305fall2016project.skinsort;
 
 import java.util.HashMap;
 import java.util.List;
+
+import org.mongodb.morphia.annotations.Embedded;
+
 import java.util.ArrayList;
 
+@Embedded
 public class IngredientLogger {
+    @Embedded
     private HashMap<String, Ingredient> logger;
     
     public IngredientLogger() {

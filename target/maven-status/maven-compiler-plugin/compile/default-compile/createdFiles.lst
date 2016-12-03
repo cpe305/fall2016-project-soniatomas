@@ -2,6 +2,8 @@ main/java/soniatomas/cpe305fall2016project/skinsort/DatabaseManager.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ViewUserInfoView.class
 main/java/soniatomas/cpe305fall2016project/skinsort/AddProductOperation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/IngredientLogger.class
+main/java/soniatomas/cpe305fall2016project/skinsort/RatingUpdater.class
+main/java/soniatomas/cpe305fall2016project/skinsort/InputValidator.class
 main/java/soniatomas/cpe305fall2016project/skinsort/LoginOperation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Ingredient.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Operation.class
@@ -11,6 +13,7 @@ main/java/soniatomas/cpe305fall2016project/skinsort/ViewProductOperation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/User.class
 main/java/soniatomas/cpe305fall2016project/skinsort/View.class
 main/java/soniatomas/cpe305fall2016project/skinsort/UserDAO.class
+main/java/soniatomas/cpe305fall2016project/skinsort/CreateNewUserView.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Rating.class
 main/java/soniatomas/cpe305fall2016project/skinsort/PasswordHandler.class
 main/java/soniatomas/cpe305fall2016project/skinsort/SystemData.class

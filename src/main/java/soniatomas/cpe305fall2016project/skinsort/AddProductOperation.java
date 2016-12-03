@@ -33,17 +33,16 @@ public class AddProductOperation implements Operation {
       rating.setUserRating(user_rating);
       product.setRating(rating);
       String ingredients = parameters.get("ingredients");
-      IngredientLogger ingredientLogger = user.getIngredientLogger();
       for (String ingredient : ingredients.split(" ,")) {
         Ingredient newIngredient = new Ingredient(ingredient);
         product.addIngredient(newIngredient);
-        if(ingredientLogger.containsIngredient(newIngredient)) {
-          ingredientLogger.getIngredient(ingredient).getRating().addReference(brand + "," + name);
-        }
-        else {
-          newIngredient.getRating().addReference(brand + "," + name);
-          ingredientLogger.addIngredient(newIngredient);
-        }
+      }
+      user.getProductHistory().addProduct(product);
+      if (DatabaseManager.getInstance().saveUpdatesToDatabae()) {
+        operationVariables.put("status", "SUCCESS");
+      }
+      else {
+        operationVariables.put("status", "DATABASE_ERROR");
       }
     }
     return operationVariables;
