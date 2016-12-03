@@ -16,7 +16,6 @@ public class CreateNewUserOperation extends Observable implements Operation {
   }
 
   public HashMap<String, Object> execute(HashMap<String, String> parameters) {
-    operationVariables.put("status", "FAILURE");
     operationVariables.put("status", "DATABASE_ERROR");
     if (!DatabaseManager.getInstance().errorInDatabase()) {
       String email = parameters.get("email");

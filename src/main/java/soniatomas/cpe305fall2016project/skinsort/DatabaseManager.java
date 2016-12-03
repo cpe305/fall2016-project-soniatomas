@@ -61,14 +61,18 @@ public class DatabaseManager {
       Query<User> query = datastore.createQuery(User.class);
       query.and(query.criteria("email").contains(email));
       QueryResults<User> retrievedUsers = userDAO.find(query);
+      User queriedUser = null;
       if (retrievedUsers != null) {
+        queriedUser = retrievedUsers.get();
+      }
+      if (queriedUser != null && queriedUser.getEmail().equals(email)) {
         return true;
       }
     }
     return false;
   }
 
-  public boolean saveNewUserToDatabase(User user) {
+  public boolean saveNewUserToDatabase(User user) { 
     if (!errorInDatabase && !userExistWithEmail(user.getEmail())) {
       Key<User> savedUser = datastore.save(user);
       if (savedUser.getId() != null) {

@@ -18,17 +18,17 @@ public class LoginView extends View implements Observer {
   }
   
   public void update(Observable obs, Object obj) {
-    String status = (String)loginOperation.getVariables().get("status");
-    if (status.equals("FAILURE"))
-    {
-      System.out.println("Invalid email/password");
-      this.complete_status = false;
-    }
-    else if (status.equals("DATABASE_ERROR")) {
-      System.out.println("Error connecting to the database. Unable to perform Login");
-      this.complete_status = false;
-    }
-    else this.complete_status = true;
+//    String status = (String)loginOperation.getVariables().get("status");
+//    if (status.equals("FAILURE"))
+//    {
+//      System.out.println("Invalid email/password");
+//      this.complete_status = false;
+//    }
+//    else if (status.equals("DATABASE_ERROR")) {
+//      System.out.println("Error connecting to the database. Unable to perform Login");
+//      this.complete_status = false;
+//    }
+//    else this.complete_status = true;
   }
 
   public void display() {
@@ -38,17 +38,28 @@ public class LoginView extends View implements Observer {
       System.out.println();
       System.out.println("\nLOGIN");
       System.out.print("Email: ");
-      if (input.hasNextLine()) {
-        email = input.nextLine().trim();
+      if (input.hasNext()) {
+        email = input.next().trim();
       }
       System.out.print("Password: ");
-      if (input.hasNextLine()) {
-        password = input.nextLine().trim();
+      if (input.hasNext()) {
+        password = input.next().trim();
       }
       HashMap<String, String> parameters = new HashMap<String, String>();
       parameters.put("email", email);
       parameters.put("password", password);
       loginOperation.execute(parameters);
+      String status = (String)loginOperation.getVariables().get("status");
+      if (status.equals("FAILURE"))
+      {
+        System.out.println("Invalid email/password");
+        this.complete_status = false;
+      }
+      else if (status.equals("DATABASE_ERROR")) {
+        System.out.println("Error connecting to the database. Unable to perform Login");
+        this.complete_status = false;
+      }
+      else this.complete_status = true;
     } while (!complete_status);
   }
 }

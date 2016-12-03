@@ -26,7 +26,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/Sonia/Desktop/EclipseWorkspace/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf6428349573408744004.tmp"/>
+    <property name="classworlds.conf" value="/Users/Sonia/Desktop/EclipseWorkspace/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf6443613260154449496.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/Sonia/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -64,8 +64,8 @@
   </properties>
   <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestSetandGetUserRating" time="0"/>
   <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestGetReferences" time="0"/>
-  <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestRemoveReferenceTrue" time="0"/>
-  <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestAddReference" time="0.001"/>
+  <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestRemoveReferenceTrue" time="0.001"/>
+  <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestAddReference" time="0"/>
   <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestRemoveReferenceFalse" time="0"/>
   <testcase classname="test.java.soniatomas.cpe305fall2016project.skinsort.RatingTest" name="TestSetandGetSystemRating" time="0"/>
 </testsuite>

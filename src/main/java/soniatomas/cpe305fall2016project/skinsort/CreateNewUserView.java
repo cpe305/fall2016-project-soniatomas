@@ -18,18 +18,7 @@ public class CreateNewUserView extends View implements Observer {
   }
   
   public void update(Observable obs, Object obj) {
-    String status = (String)newUserOperation.getVariables().get("status");
-    if (status.equals("FAILURE"))
-    {
-      System.out.println("Error: There is an account associted with the inputted email.");
-      System.out.println("Unable to create new user.");
-      this.status = false;
-    }
-    else if (status.equals("DATABASE_ERROR")) {
-      System.out.println("Error connecting to the database. Unable to create new user.");
-      this.status = false;
-    }
-    else this.status = true;
+    
   }
 
   public void display() {
@@ -42,20 +31,20 @@ public class CreateNewUserView extends View implements Observer {
       System.out.println();
       System.out.println("\nCREATE NEW USER");
       System.out.print("First Name: ");
-      if (input.hasNextLine()) {
-        firstName = input.nextLine().trim();
+      if (input.hasNext()) {
+        firstName = input.next().trim();
       }
       System.out.print("Last Name: ");
-      if (input.hasNextLine()) {
-        lastName = input.nextLine().trim();
+      if (input.hasNext()) {
+        lastName = input.next().trim();
       }
       System.out.print("Email: ");
-      if (input.hasNextLine()) {
-        email = input.nextLine().trim();
+      if (input.hasNext()) {
+        email = input.next().trim();
       }
       System.out.print("Password: ");
-      if (input.hasNextLine()) {
-        password = input.nextLine().trim();
+      if (input.hasNext()) {
+        password = input.next().trim();
       }
       HashMap<String, String> parameters = new HashMap<String, String>();
       parameters.put("email", email);
@@ -63,6 +52,18 @@ public class CreateNewUserView extends View implements Observer {
       parameters.put("first_name", firstName);
       parameters.put("last_name", lastName);
       newUserOperation.execute(parameters);
+      String status = (String)newUserOperation.getVariables().get("status");
+      if (status.equals("FAILURE"))
+      {
+        System.out.println("Error: There is an account associted with the inputted email.");
+        System.out.println("Unable to create new user.");
+        this.status = false;
+      }
+      else if (status.equals("DATABASE_ERROR")) {
+        System.out.println("Error connecting to the database. Unable to create new user.");
+        this.status = false;
+      }
+      else this.status = true;
     } while (!status);
   }
 }
