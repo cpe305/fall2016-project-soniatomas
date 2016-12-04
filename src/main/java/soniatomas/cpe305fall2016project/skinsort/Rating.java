@@ -122,6 +122,7 @@ public class Rating {
   }
   public boolean containsReference(String brand, String name) {
     String referenceValue = brand.toLowerCase() + name.toLowerCase();
+    
     return containsReference(referenceValue);
   }
   

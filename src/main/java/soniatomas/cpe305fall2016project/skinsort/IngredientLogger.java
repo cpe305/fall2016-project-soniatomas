@@ -6,6 +6,7 @@ import java.util.List;
 import org.mongodb.morphia.annotations.Embedded;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 @Embedded
 public class IngredientLogger {
@@ -41,12 +42,23 @@ public class IngredientLogger {
       }
       else return null;
     }
+    public Ingredient getIngredient(Ingredient ingredient) {
+      if (logger.containsKey(ingredient.getName())) {
+        return logger.get(ingredient.getName());
+      }
+      else return null;
+    }
     public boolean containsIngredient(String ingredient) {
       return logger.containsKey(ingredient);
     }
     public boolean containsIngredient(Ingredient ingredient) {
       return logger.containsKey(ingredient.getName());
     } 
+    public List<Ingredient> getIngredients() {
+      Collection<Ingredient> ingredientCollection = logger.values();
+      ArrayList<Ingredient> listOfIngredients = new ArrayList<Ingredient>(ingredientCollection);
+      return listOfIngredients;
+    }
     
     
 }
