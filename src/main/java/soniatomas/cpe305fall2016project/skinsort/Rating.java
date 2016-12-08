@@ -107,6 +107,11 @@ public class Rating {
     return false;
   }
   
+  public boolean removeReference(String brand, String name) {
+    String reference = brand + ", " + name;
+    return removeReference(reference);
+  }
+  
   public boolean containsReference(String reference) {
     boolean referenceFound = false;
     for (String referenceInList : references) {
@@ -127,7 +132,7 @@ public class Rating {
   }
   
   public void addReference(String brand, String name) {
-    String reference = brand.toLowerCase() + "," + name.toLowerCase();
+    String reference = brand.toLowerCase() + ", " + name.toLowerCase();
     references.add(reference);
   }
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.soniatomas.cpe305fall2016project.skinsort.RemoveProductSceneController">
+   <children>
+      <Label layoutX="239.0" layoutY="45.0" text="Remove Product" />
+      <Label layoutX="58.0" layoutY="118.0" text="Products" />
+      <Label layoutX="58.0" layoutY="84.0" text="Select a product and select Delete" />
+      <Button fx:id="goToHomeButton" layoutX="29.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleGoToHomeAction" text="Go to Home" />
+      <Button fx:id="removeProductButton" layoutX="375.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleRemoveProductAction" text="Remove" />
+      <ListView fx:id="productListView" layoutX="58.0" layoutY="144.0" prefHeight="360.0" prefWidth="265.0" />
+      <Label fx:id="statusLabel" layoutX="387.0" layoutY="189.0" text="Status" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.soniatomas.cpe305fall2016project.skinsort.ViewProductHistorySceneController">
+  <children>
+      <Label layoutX="232.0" layoutY="176.0" text="Product History" />
+      <Label layoutX="54.0" layoutY="251.0" text="Products" />
+      <Button fx:id="goToHomeButton" layoutX="22.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleGoToHomeAction" text="Go to Home" />
+      <Button fx:id="deleteButton" layoutX="477.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleViewProductAction" text="View Product" />
+      <ListView fx:id="productListView" layoutX="54.0" layoutY="274.0" prefHeight="264.0" prefWidth="394.0" />
+      <Label fx:id="statusLabel" layoutX="54.0" layoutY="205.0" text="Label" />
+   </children>  
+</AnchorPane>

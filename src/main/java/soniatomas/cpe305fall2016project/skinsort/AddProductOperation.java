@@ -33,7 +33,9 @@ public class AddProductOperation implements Operation {
       rating.setUserRating(user_rating);
       product.setRating(rating);
       String ingredients = parameters.get("ingredients");
-      for (String ingredient : ingredients.split(" ,")) {
+      InputValidator inputValidator = new InputValidator();
+      List<String> ingredientList = inputValidator.ingredientInputStringToList(ingredients);
+      for (String ingredient : ingredientList) {
         Ingredient newIngredient = new Ingredient(ingredient);
         product.addIngredient(newIngredient);
       }
