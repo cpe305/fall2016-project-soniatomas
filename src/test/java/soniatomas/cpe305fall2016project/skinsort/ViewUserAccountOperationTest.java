@@ -20,8 +20,8 @@ public class ViewUserAccountOperationTest {
     ViewUserAccountOperation viewUserAccountOp = new ViewUserAccountOperation();
     viewUserAccountOp.execute(null);
     HashMap<String, Object> results = viewUserAccountOp.getVariables();
-    String status = (String)results.get("status");
-    User retrivedUser = (User)results.get("user");
+    String status = (String)results.get("STATUS");
+    User retrivedUser = (User)results.get("USER");
     
     assertEquals("SUCCESS", status);
     assertEquals("soniatomas@example.com", retrivedUser.getEmail());
@@ -37,8 +37,8 @@ public class ViewUserAccountOperationTest {
     ViewUserAccountOperation viewUserAccountOp = new ViewUserAccountOperation();
     viewUserAccountOp.execute(null);
     HashMap<String, Object> results = viewUserAccountOp.getVariables();
-    String status = (String)results.get("status");
-    User retrievedUser = (User)results.get("user");
+    String status = (String)results.get("STATUS");
+    User retrievedUser = (User)results.get("USER");
     
     assertEquals("FAILURE", status);
     assertTrue(retrievedUser == null);

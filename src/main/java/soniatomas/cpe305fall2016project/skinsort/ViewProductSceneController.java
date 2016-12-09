@@ -23,9 +23,14 @@ public class ViewProductSceneController implements Initializable {
   
    private String previousScene = "/HomeScene.fxml";
    private String buttonTitle = "Go to Home";
+   private ViewHistoryOperation productHistory;
+   
    
    @FXML
    Button goBackButton;
+   
+   @FXML 
+   
     /**
      * Initializes the controller class.
      */
@@ -33,6 +38,7 @@ public class ViewProductSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
       this.previousScene = "/HomeScene.fxml";
       this.buttonTitle = "Go to Home";
+      this.productHistory  = new ViewHistoryOperation();
         // TODO
     }    
     
@@ -50,6 +56,7 @@ public class ViewProductSceneController implements Initializable {
     public void setPreviousScene(String sceneLocation, String buttonTitle) {
       this.previousScene = sceneLocation;
       this.buttonTitle = buttonTitle;
+      
     }
     
     

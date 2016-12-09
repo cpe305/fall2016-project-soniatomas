@@ -1,14 +1,19 @@
 package main.java.soniatomas.cpe305fall2016project.skinsort;
 
 import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 
 //import java.util
 public class DataConverter {
-  public List<Hashtable<String, String>> getListOfProductData() {
+  
+  public List<Hashtable<String, String>> getListOfProductData(List<Product> productList) {
     List<Hashtable<String, String>> productData = new ArrayList<Hashtable<String, String>>();
-    List<Product> productList = SystemData.getInstance().getUser().getProductHistory().getProductHistory();
+    //List<Product> productList = SystemData.getInstance().getUser().getProductHistory().getProductHistory();
     
     for (Product product : productList) {
       Hashtable<String, String> productTable = new Hashtable<String, String>();
@@ -20,6 +25,14 @@ public class DataConverter {
       productData.add(productTable);
     }
     return productData;
+  }
+  
+  public ObservableList<ProductTableViewElement> getObservableProductList(List<Product> productList) {
+    ObservableList<ProductTableViewElement> list = FXCollections.observableArrayList();
+    for (Product product : productList) {
+      list.add(new ProductTableViewElement(product.getCategory(), product.getType(), product.getBrand(), product.getName(), product.getDateUpdated()));
+    }
+    return list;
   }
   
   public Hashtable<String, String> getProductData(Product product) {
@@ -50,7 +63,7 @@ public class DataConverter {
     userTable.put("LAST_NAME", user.getLastName());
     
     return userTable;
-  
   }
+  
   
 }

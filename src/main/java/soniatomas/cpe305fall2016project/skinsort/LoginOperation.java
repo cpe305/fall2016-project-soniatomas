@@ -15,6 +15,10 @@ public class LoginOperation extends Observable implements Operation {
   public HashMap<String, Object> getVariables() {
     return operationVariables;
   }
+  
+  public String getStatus() {
+    return (String)operationVariables.get("status");
+  }
 
   public HashMap<String, Object> execute(HashMap<String, String> parameters) {
     operationVariables.put("status", "DATABASE_ERROR");

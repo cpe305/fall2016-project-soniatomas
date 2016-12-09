@@ -24,6 +24,7 @@ main/java/soniatomas/cpe305fall2016project/skinsort/AddProductSceneController.cl
 main/java/soniatomas/cpe305fall2016project/skinsort/ViewProductHistorySceneController.class
 main/java/soniatomas/cpe305fall2016project/skinsort/DatabaseEntity.class
 main/java/soniatomas/cpe305fall2016project/skinsort/QueryFromDatabaseTestDriver.class
+main/java/soniatomas/cpe305fall2016project/skinsort/ProductTableViewElement.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ViewUserInfoView.class
 main/java/soniatomas/cpe305fall2016project/skinsort/RatingUpdater.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Ingredient.class
