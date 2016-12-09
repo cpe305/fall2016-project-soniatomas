@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.soniatomas.cpe305fall2016project.skinsort.HomeSceneController">
+   <children>
+      <Label layoutX="248.0" layoutY="47.0" text="SkinSort">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Button fx:id="viewUserInfoButton" layoutX="215.0" layoutY="139.0" mnemonicParsing="false" onAction="#handleViewUserAction" prefHeight="27.0" prefWidth="148.0" text="View User Info" />
+      <Button fx:id="viewProductHistoryButton" layoutX="215.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleViewProductHistoyrAction" text="View Product History" />
+      <Button fx:id="addProductButton" layoutX="215.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleAddProductAction" prefHeight="27.0" prefWidth="148.0" text="Add Product" />
+      <Button fx:id="removeProductButton" layoutX="215.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleRemoveProductAction" prefHeight="27.0" prefWidth="148.0" text="Remove Product" />
+      <Button fx:id="assessProductButton" layoutX="215.0" layoutY="379.0" mnemonicParsing="false" onAction="#handleAssessProductAction" prefHeight="27.0" prefWidth="148.0" text="Assess Product" />
+   </children>
+</AnchorPane>

@@ -5,5 +5,6 @@ test/java/soniatomas/cpe305fall2016project/skinsort/LoginOperationTest.class
 test/java/soniatomas/cpe305fall2016project/skinsort/ProductHistoryTest.class
 test/java/soniatomas/cpe305fall2016project/skinsort/UserTest.class
 test/java/soniatomas/cpe305fall2016project/skinsort/ViewUserAccountOperationTest.class
+test/java/soniatomas/cpe305fall2016project/skinsort/ProductTableViewElementTest.class
 test/java/soniatomas/cpe305fall2016project/skinsort/IngredientTest.class
 test/java/soniatomas/cpe305fall2016project/skinsort/RatingTest.class
