@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.soniatomas.cpe305fall2016project.skinsort.AssessProductSceneController">
   <children>
-      <Label layoutX="253.0" layoutY="81.0" text="Asses Product">
+      <Label layoutX="253.0" layoutY="81.0" prefHeight="23.0" prefWidth="142.0" text="Assess Product">
          <font>
             <Font size="18.0" />
          </font></Label>
