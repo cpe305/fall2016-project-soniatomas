@@ -19,9 +19,11 @@ main/java/soniatomas/cpe305fall2016project/skinsort/LoginView.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Product.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ProductException.class
 main/java/soniatomas/cpe305fall2016project/skinsort/SaveToDatabaseTestDriver.class
+main/java/soniatomas/cpe305fall2016project/skinsort/ViewProductDataOperation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ApplicationMain.class
 main/java/soniatomas/cpe305fall2016project/skinsort/AddProductSceneController.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ViewProductHistorySceneController.class
+main/java/soniatomas/cpe305fall2016project/skinsort/SceneInitializer.class
 main/java/soniatomas/cpe305fall2016project/skinsort/DatabaseEntity.class
 main/java/soniatomas/cpe305fall2016project/skinsort/QueryFromDatabaseTestDriver.class
 main/java/soniatomas/cpe305fall2016project/skinsort/ProductTableViewElement.class
@@ -32,6 +34,7 @@ main/java/soniatomas/cpe305fall2016project/skinsort/ViewHistoryOperation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/AddProductView.class
 main/java/soniatomas/cpe305fall2016project/skinsort/HomeView.class
 main/java/soniatomas/cpe305fall2016project/skinsort/CreateNewUserSceneController.class
+main/java/soniatomas/cpe305fall2016project/skinsort/GetProductsOperation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/Rating.class
 main/java/soniatomas/cpe305fall2016project/skinsort/PasswordHandler.class
 main/java/soniatomas/cpe305fall2016project/skinsort/SystemData.class
@@ -43,4 +46,5 @@ main/java/soniatomas/cpe305fall2016project/skinsort/ViewUserAccountOperation.cla
 main/java/soniatomas/cpe305fall2016project/skinsort/ViewHistoryView.class
 main/java/soniatomas/cpe305fall2016project/skinsort/DataConverter.class
 main/java/soniatomas/cpe305fall2016project/skinsort/JavaFXApplication2.class
+main/java/soniatomas/cpe305fall2016project/skinsort/CreateProductsOperation.class
 main/java/soniatomas/cpe305fall2016project/skinsort/HomeSceneController.class

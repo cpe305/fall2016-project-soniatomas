@@ -5,7 +5,7 @@ import java.util.*;
 public class InputValidator {
 
   public List<String> ingredientInputStringToList(String input) {
-    String ingredientStrings[] = input.split(".*\\W+.*");
+    String ingredientStrings[] = input.split(",.!?");
     for (int index = 0; index < ingredientStrings.length; index++) {
       ingredientStrings[index] = ingredientStrings[index].trim().toLowerCase();
     }

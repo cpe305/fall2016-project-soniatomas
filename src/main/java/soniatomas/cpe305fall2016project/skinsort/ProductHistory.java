@@ -13,7 +13,7 @@ public class ProductHistory {
   @Embedded
   private Hashtable<String, String> categories;
   @Embedded
-  private Hashtable<String, String>  brands;
+  private Hashtable<String, String> brands;
   @Embedded
   private Hashtable<String, String> types;
   

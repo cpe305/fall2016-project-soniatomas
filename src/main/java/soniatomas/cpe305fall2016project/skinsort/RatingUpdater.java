@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class RatingUpdater {
-  
+
   // these might not work since java is pass by value;
 
   // sets and added products user ratings
@@ -13,25 +13,46 @@ public class RatingUpdater {
   // of those ingredients
   // find the system rating of the product.
   // public void setAddedProductUserRating(Product product, Rating rating) {
-  public void setAddedProductUserRating(Product product, double userRating) {
-    product.getRating().setUserRating(userRating);
+  // public void setAddedProductUserRating(Product product, double userRating) {
+  // product.getRating().setUserRating(userRating);
+  // IngredientLogger ingredientLogger =
+  // SystemData.getInstance().getUser().getIngredientLogger();
+  // for (Ingredient ingredient : product.getIngredients()) {
+  // if (ingredientLogger.containsIngredient(ingredient)) {
+  // Ingredient loggedIngredient = ingredientLogger.getIngredient(ingredient);
+  // loggedIngredient.getRating().addReference(product.getBrand(),
+  // product.getName());
+  // updateIngredientSystemRating(loggedIngredient);
+  // } else {
+  // Ingredient newLoggedIngredient = new Ingredient(ingredient.getName());
+  // newLoggedIngredient.getRating().addReference(product.getBrand(),
+  // product.getType());
+  // newLoggedIngredient.getRating().setSystemRating(userRating);
+  // }
+  // updateProductSystemRating(product);
+  // }
+  //
+  // }
+
+  public double findAddedProductSystemRating(Product product) {
+    double userRating = product.getRating().getUserRating();
     IngredientLogger ingredientLogger = SystemData.getInstance().getUser().getIngredientLogger();
     for (Ingredient ingredient : product.getIngredients()) {
       if (ingredientLogger.containsIngredient(ingredient)) {
         Ingredient loggedIngredient = ingredientLogger.getIngredient(ingredient);
         loggedIngredient.getRating().addReference(product.getBrand(), product.getName());
-        updateIngredientSystemRating(loggedIngredient);
+        double newRating = updateIngredientSystemRating(loggedIngredient);
+        loggedIngredient.getRating().setSystemRating(newRating);
       } else {
         Ingredient newLoggedIngredient = new Ingredient(ingredient.getName());
         newLoggedIngredient.getRating().addReference(product.getBrand(), product.getType());
         newLoggedIngredient.getRating().setSystemRating(userRating);
+        ingredientLogger.addIngredient(newLoggedIngredient);
       }
-      updateProductSystemRating(product);
     }
-
+    return updateProductSystemRating(product);
   }
 
-  
   // sets a products user rating
   // finds its system rating whithout addding a refenrence of it its
   // ingredients
@@ -39,13 +60,18 @@ public class RatingUpdater {
     product.getRating().setUserRating(userRating);
     updateProductSystemRating(product);
   }
-  
+
   public void updateIngredientRatingsAfterRemovingProduct(Product product) {
     IngredientLogger ingredientLogger = SystemData.getInstance().getUser().getIngredientLogger();
     for (Ingredient ingredient : product.getIngredients()) {
       Ingredient ingredientToUpdate = ingredientLogger.getIngredient(ingredient);
-      ingredientToUpdate.getRating().removeReference(product.getBrand(), product.getName());
-      updateIngredientSystemRating(ingredientToUpdate);
+      try {
+        ingredientToUpdate.getRating().removeReference(product.getBrand(), product.getName());
+        double newRating = updateIngredientSystemRating(ingredientToUpdate);
+        ingredient.getRating().setSystemRating(newRating);
+      } catch (NullPointerException e) {
+
+      }
     }
   }
 
@@ -108,7 +134,7 @@ public class RatingUpdater {
   // and then you calculate a new system rating for taht ingrdient
   // go this.
 
-  public void updateIngredientSystemRating(Ingredient ingredient) {
+  public double updateIngredientSystemRating(Ingredient ingredient) {
     // Ingredient ingredientToUpdate =
     // SystemData.getInstance().getUser().getIngredientLogger()
     // .getIngredient(ingredient);
@@ -121,21 +147,27 @@ public class RatingUpdater {
       String data[] = reference.split(",");
       String brand = data[0];
       String name = data[1];
-      double productUserRatingValue = productHistory.getProduct(brand, name).getRating()
-          .getUserRating();
-      ratingsTotal += productUserRatingValue;
-      totalProducts++;
+      try {
+        double productUserRatingValue = productHistory.getProduct(brand, name).getRating()
+            .getUserRating();
+        ratingsTotal += productUserRatingValue;
+        totalProducts++;
+      } catch (NullPointerException e) {
+
+      }
     }
     double newRating = ratingsTotal / totalProducts;
     ingredientToUpdate.getRating().setSystemRating(newRating);
+    return newRating;
   }
 
-  public void updateProductSystemRating(Product product) {
+  public double updateProductSystemRating(Product product) {
     IngredientLogger ingredientLogger = SystemData.getInstance().getUser().getIngredientLogger();
     double ratingsTotal = 0;
     int totalIngredients = 0;
     for (Ingredient ingredient : product.getIngredients()) {
       Ingredient loggedIngredient = ingredientLogger.getIngredient(ingredient.getName());
+      try {
       if (ingredient != null) {
         if (loggedIngredient.getRating().getUserRating() > 0) {
           ratingsTotal += loggedIngredient.getRating().getUserRating();
@@ -143,9 +175,17 @@ public class RatingUpdater {
           ratingsTotal += loggedIngredient.getRating().getSystemRating();
         totalIngredients++;
       }
+      } catch(NullPointerException e) {
+        
+      }
     }
-    double newRating = ratingsTotal / totalIngredients;
-    product.getRating().setSystemRating(newRating);
+    double newRating = 0.0;
+    try {
+      newRating = ratingsTotal / totalIngredients;
+    } catch (Exception e) {
+      newRating = 0;
+    }
+    return newRating;
   }
 
   // public void addReferenceToIngredient(Product product, Ingredient

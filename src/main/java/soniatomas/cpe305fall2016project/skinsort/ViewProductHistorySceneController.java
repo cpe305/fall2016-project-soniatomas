@@ -2,6 +2,7 @@ package main.java.soniatomas.cpe305fall2016project.skinsort;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -50,12 +51,24 @@ public class ViewProductHistorySceneController implements Initializable {
   
   @FXML
   private void handleViewProductAction(ActionEvent event) throws IOException {
-    Parent parent = FXMLLoader.load(getClass().getResource("/ViewProductScene.fxml"));
-    Scene scene = new Scene(parent);
-    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-    stage.hide();
-    stage.setScene(scene);
-    stage.show();
+    
+    ProductTableViewElement selectedProduct = productTableView.getSelectionModel().getSelectedItem();
+    if (selectedProduct != null) {
+      GetProductsOperation getProducts = new GetProductsOperation();
+      HashMap<String, String> parameters = new HashMap<String, String>();
+      parameters.put("product_brand", selectedProduct.getBrand());
+      parameters.put("product_name", selectedProduct.getName());
+      getProducts.execute(parameters);
+      Parent parent = FXMLLoader.load(getClass().getResource("/ViewProductScene.fxml"));
+      Scene scene = new Scene(parent);
+      Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      stage.hide();
+      stage.setScene(scene);
+      stage.show();
+    }
+    else {
+      statusLabel.setText("Error: Product not selected");
+    }
   }
 
   @FXML
@@ -73,17 +86,6 @@ public class ViewProductHistorySceneController implements Initializable {
    */
   // @Override
   public void initialize(URL url, ResourceBundle rb) {
-    
-//    titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
-//    idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-//    authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
-//    publisherCol.setCellValueFactory(new PropertyValueFactory<>("publisher"));
-//    availabilityCol.setCellValueFactory(new PropertyValueFactory<>("availabilty"));
-
-//    TableColumn<Person,String> firstNameCol = new TableColumn<Person,String>("First Name");
-//    firstNameCol.setCellValueFactory(new PropertyValueFactory("firstName"));
-//    TableColumn<Person,String> lastNameCol = new TableColumn<Person,String>("Last Name");
-//    lastNameCol.setCellValueFactory(new PropertyValueFactory("lastName"));
     categoryCol.setCellValueFactory(new PropertyValueFactory<ProductTableViewElement, String>("category"));
     typeCol.setCellValueFactory(new PropertyValueFactory<ProductTableViewElement, String>("type"));
     brandCol.setCellValueFactory(new PropertyValueFactory<ProductTableViewElement, String>("brand"));
@@ -95,8 +97,6 @@ public class ViewProductHistorySceneController implements Initializable {
     @SuppressWarnings("unchecked")
     List<Product> listOfProducts = (List<Product>) viewHistory.getVariables().get("products");
     this.productList = new DataConverter().getObservableProductList(listOfProducts);
-    
-    
     productTableView.getItems().setAll(productList);
 
     // TODO

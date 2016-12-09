@@ -4,9 +4,13 @@ public class SystemData {
 
   private static SystemData systemData;
   private User currentUser;
+  private Product productOne;
+  private Product productTwo;
 
   private SystemData() {
     currentUser = null;
+    productOne = null;
+    productTwo = null;
   }
 
   public static SystemData getInstance() {
@@ -22,6 +26,21 @@ public class SystemData {
 
   public User getUser() {
     return currentUser;
+  }
+  
+  public void setProductOne(Product productOne) {
+    this.productOne = productOne;
+  }
+  
+  public Product getProductOne() {
+    return productOne;
+  }
+  public void setProductTwo(Product productTwo) {
+    this.productOne = productTwo;
+  }
+  
+  public Product getProductTwo() {
+    return productTwo;
   }
 
 }

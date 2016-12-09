@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.soniatomas.cpe305fall2016project.skinsort.StartUpSceneController">
+   <children>
+      <SplitPane dividerPositions="0.5034802784222738" layoutX="84.0" layoutY="209.0" prefHeight="292.0" prefWidth="433.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="216.0">
+               <children>
+                  <Label layoutX="59.0" layoutY="23.0" text="Login" />
+                  <Label layoutX="26.0" layoutY="80.0" text="Email" />
+                  <Label layoutX="29.0" layoutY="126.0" text="Password" />
+                  <TextField fx:id="emailField" layoutX="26.0" layoutY="97.0" />
+                  <PasswordField fx:id="passwordField" layoutX="26.0" layoutY="145.0" />
+                  <Button fx:id="loginButton" layoutX="30.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Login" />
+                  <Label fx:id="statusLabel" layoutX="39.0" layoutY="236.0" text="Label" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="56.0" layoutY="23.0" text="New Account" />
+                  <Button fx:id="createNewUserButton" layoutX="68.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleCreateNewUserAction" text="Create" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -29,7 +29,6 @@ public class AddProductOperation implements Operation {
       Product product = new Product(category, type, brand, name);
       product.setPrice(price);
       Rating rating = new Rating();
-      rating.setSystemRating(0);
       rating.setUserRating(user_rating);
       product.setRating(rating);
       String ingredients = parameters.get("ingredients");
@@ -40,6 +39,13 @@ public class AddProductOperation implements Operation {
         product.addIngredient(newIngredient);
       }
       user.getProductHistory().addProduct(product);
+      
+      RatingUpdater ratingUpdater = new RatingUpdater();
+      double systemRating = ratingUpdater.findAddedProductSystemRating(product);
+      product.getRating().setSystemRating(systemRating);
+      
+      
+      SystemData.getInstance().setProductOne(product);
       if (DatabaseManager.getInstance().saveUpdatesToDatabae()) {
         operationVariables.put("status", "SUCCESS");
       }

@@ -16,7 +16,17 @@ public class RemoveProductOperation implements Operation {
     public HashMap<String, Object> execute(HashMap<String, String> parameters) {
       String productBrand = parameters.get("PRODUCT_BRAND");
       String productName = parameters.get("PRODUCT_NAME");
+      Product product = SystemData.getInstance().getUser().getProductHistory().getProduct(productBrand, productName);
+      try {
+      RatingUpdater ratingUpdater = new RatingUpdater();
+      
+      ratingUpdater.updateIngredientRatingsAfterRemovingProduct(product);
+      }
+      catch(NullPointerException e) {
+         
+      }
       boolean operationSuccess = SystemData.getInstance().getUser().getProductHistory().removeProduct(productBrand, productName);
+      
       if (operationSuccess) {
         operationVariables.put("status", "SUCCESS");
       }
