@@ -33,8 +33,17 @@ Recommendation based on comparing product ingredients and how similar the produc
       <p>The system uses an 3 tier architecture consisting of a presentation layer, a logic layer, and a data layer. The presentation layer handles receiving user input through a graphical user interface. The logic layer deals with processing the products that the user inputs in to the system and determining the ratings of the products.
       The data layer deals with saving the product and ingredient information onto the database.</p>
       <p>Below is a sample of the portion of the diagram</p>
-      
+      <p><img src="https://raw.githubusercontent.com/cpe305/fall2016-project-soniatomas/master/images/305_UMLDiagram.png" alt="mainscreen" /></p>
  
+      <h1>Design Patterns</h1>
+      <h3>Singleton Pattern</h3>
+      <p>- DatabaseManager - handles functionality with regards to MongoDB database.</p>
+      <p>- SystemData - keeps one instance of User and recently affected Products so other logic classes could have an updated instance of these objects</p>
+      <p><img src="https://raw.githubusercontent.com/cpe305/fall2016-project-soniatomas/master/images/Singleton.png" alt="mainscreen" /></p>
+ 
+      <h3>Observer Pattern</h3>
+      <p>Scene controllers observes logic classes and they update elements on their respective scene once logic is complete</p>
+      
 
     </section>
 
