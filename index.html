@@ -19,10 +19,8 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="skinsort" class="anchor" href="#skinsort" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SkinSort</h3>
-<h1>SkinSort</h1>
-<p>Product monitoring/recommendation desktop application that informs a user if a particular product is good for them based on their previous product usage history and the reviews on their previous products.
+      <h1>SkinSort</h1>
+      <p>Product monitoring/recommendation desktop application that informs a user if a particular product is good for them based on their previous product usage history and the reviews on their previous products.
 Recommendation based on comparing product ingredients and how similar the product is based on previous products used.</p>
 
       <h1>How Does SkinSort Work?</h1>
@@ -31,6 +29,12 @@ Recommendation based on comparing product ingredients and how similar the produc
         based on those calculations.<p>
       <p>The ratings of the products are based on a scale from 0.1 to 10.0. Any product with a calculated rating less than a 3.3 is considered to be a bad product. Any product between a 3.4 and 6.7 rating is considered to be neutral, neither a bad or a good product. Products with a rating above a 6.7 are considered to be good products.<p>
    
+      <h1>System Architecture</h1>
+      <p>The system uses an 3 tier architecture consisting of a presentation layer, a logic layer, and a data layer. The presentation layer handles receiving user input through a graphical user interface. The logic layer deals with processing the products that the user inputs in to the system and determining the ratings of the products.
+      The data layer deals with saving the product and ingredient information onto the database.</p>
+      <p>Below is a sample of the portion of the diagram</p>
+      
+ 
 
     </section>
 
