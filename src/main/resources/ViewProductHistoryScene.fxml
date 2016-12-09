@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,19 +9,26 @@
 
 <AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.soniatomas.cpe305fall2016project.skinsort.ViewProductHistorySceneController">
   <children>
-      <Label layoutX="232.0" layoutY="176.0" text="Product History" />
-      <Label layoutX="54.0" layoutY="307.0" text="Products" />
-      <Button fx:id="goToHomeButton" layoutX="22.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleGoToHomeAction" text="Go to Home" />
-      <Button fx:id="deleteButton" layoutX="477.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleViewProductAction" text="View Product" />
-      <Label fx:id="statusLabel" layoutX="51.0" layoutY="225.0" text="Label" />
-      <TableView fx:id="productTableView" layoutX="28.0" layoutY="345.0" prefHeight="240.0" prefWidth="540.0">
+      <Label layoutX="233.0" layoutY="123.0" text="Product History">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="goToHomeButton" layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#handleGoToHomeAction" text="Go to Home" />
+      <Button fx:id="deleteButton" layoutX="457.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleViewProductAction" text="View Product" />
+      <Label fx:id="statusLabel" layoutX="85.0" layoutY="176.0" textFill="#eb2a2a" />
+      <TableView fx:id="productTableView" layoutX="25.0" layoutY="209.0" prefHeight="334.0" prefWidth="551.0">
         <columns>
           <TableColumn fx:id="categoryCol" prefWidth="94.0" text="Category" />
           <TableColumn fx:id="typeCol" prefWidth="124.0" text="Type" />
-            <TableColumn fx:id="brandCol" prefWidth="113.0" text="Brand" />
-            <TableColumn fx:id="nameCol" prefWidth="115.0" text="Name" />
+            <TableColumn fx:id="brandCol" prefWidth="109.0" text="Brand" />
+            <TableColumn fx:id="nameCol" prefWidth="119.0" text="Name" />
             <TableColumn fx:id="dateCol" prefWidth="93.0" text="Date" />
         </columns>
       </TableView>
+      <Text layoutX="255.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SkinSort">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
    </children>  
 </AnchorPane>

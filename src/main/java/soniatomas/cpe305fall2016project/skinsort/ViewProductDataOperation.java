@@ -19,6 +19,13 @@ public class ViewProductDataOperation implements Operation {
 
   public HashMap<String, Object> execute(HashMap<String, String> parameters) {
     Product product = SystemData.getInstance().getProductOne();
+    RatingUpdater updater = new RatingUpdater();
+    double systemRating = updater.updateProductSystemRating(product);
+    try {
+      product.getRating().setSystemRating(systemRating);
+    } catch (Exception e) {
+      
+    }
     DataConverter dataConverter = new DataConverter();
     Hashtable<String, String> productData= dataConverter.getProductData(product);
     operationVariables.put("product_data", productData);

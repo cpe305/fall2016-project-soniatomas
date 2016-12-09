@@ -142,21 +142,22 @@ public class RatingUpdater {
     ProductHistory productHistory = SystemData.getInstance().getUser().getProductHistory();
     List<String> references = ingredientToUpdate.getRating().getReferences();
     double ratingsTotal = 0;
-    double totalProducts = 0;
+    int totalProducts = 0;
     for (String reference : references) {
       String data[] = reference.split(",");
-      String brand = data[0];
-      String name = data[1];
-      try {
-        double productUserRatingValue = productHistory.getProduct(brand, name).getRating()
-            .getUserRating();
+      String brand = data[0].trim();
+      String name = data[1].trim();
+      Product product = productHistory.getProduct(brand, name);
+      if (product != null) {
+        double productUserRatingValue = product.getRating().getUserRating();
         ratingsTotal += productUserRatingValue;
         totalProducts++;
-      } catch (NullPointerException e) {
-
       }
     }
-    double newRating = ratingsTotal / totalProducts;
+    double newRating = 0.0;
+    if (totalProducts != 0) {
+    newRating = ratingsTotal / totalProducts;
+    }
     ingredientToUpdate.getRating().setSystemRating(newRating);
     return newRating;
   }
@@ -167,23 +168,19 @@ public class RatingUpdater {
     int totalIngredients = 0;
     for (Ingredient ingredient : product.getIngredients()) {
       Ingredient loggedIngredient = ingredientLogger.getIngredient(ingredient.getName());
-      try {
-      if (ingredient != null) {
+
+      if (loggedIngredient != null) {
         if (loggedIngredient.getRating().getUserRating() > 0) {
           ratingsTotal += loggedIngredient.getRating().getUserRating();
         } else
           ratingsTotal += loggedIngredient.getRating().getSystemRating();
         totalIngredients++;
       }
-      } catch(NullPointerException e) {
-        
-      }
     }
+
     double newRating = 0.0;
-    try {
+    if (totalIngredients != 0) {
       newRating = ratingsTotal / totalIngredients;
-    } catch (Exception e) {
-      newRating = 0;
     }
     return newRating;
   }
