@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  *
  * @author Sonia
  */
-public class JavaFXApplication2 extends Application {
+public class SkinSortApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {

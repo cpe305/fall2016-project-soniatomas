@@ -8,22 +8,8 @@ import javafx.collections.ObservableList;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-//import java.util
 public class DataConverter {
-  
-//  public List<Hashtable<String, String>> getListOfProductData(List<Product> productList) {
-//    List<Hashtable<String, String>> productData = new ArrayList<Hashtable<String, String>>();
-//    for (Product product : productList) {
-//      Hashtable<String, String> productTable = new Hashtable<String, String>();
-//      productTable.put("CATEGORY", product.getCategory());
-//      productTable.put("TYPE", product.getType());
-//      productTable.put("BRAND", product.getBrand());
-//      productTable.put("NAME", product.getName());
-//      productTable.put("DATE", product.getDateUpdated());
-//      productData.add(productTable);
-//    }
-//    return productData;
-//  }
+
   
   public ObservableList<ProductTableViewElement> getObservableProductList(List<Product> productList) {
     ObservableList<ProductTableViewElement> list = FXCollections.observableArrayList();
@@ -71,13 +57,5 @@ public class DataConverter {
     return list;
   } 
   
-  public ObservableList<String> getObservableStringList(List<String> listOfStrings) {
-    //ObservableList<String> list = FXCollections.observableArrayList();
-//    for (Ingredient ingredient : ingredientList) {
-//      list.add(ingredient.getName());
-////    }
-//    return list;
-    return FXCollections.observableArrayList(listOfStrings);
-  } 
   
 }

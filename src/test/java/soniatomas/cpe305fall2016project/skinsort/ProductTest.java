@@ -8,6 +8,7 @@ import main.java.soniatomas.cpe305fall2016project.skinsort.Product;
 import main.java.soniatomas.cpe305fall2016project.skinsort.Ingredient;
 import main.java.soniatomas.cpe305fall2016project.skinsort.Rating;
 import java.util.ArrayList;
+import java.util.List;
 public class ProductTest {
 
   @Test
@@ -87,7 +88,8 @@ public class ProductTest {
     productOne.addIngredient(ingredientTwo);
     productOne.addIngredient("Propanediol");
     productOne.addIngredient("Sodium Stearate");
-    
+    List<Ingredient> ingredientList = productOne.getIngredients();
+    assertEquals("propanediol", ingredientList.get(2).getName());
     assertTrue(!productOne.containsIngredient("water"));
     assertTrue(!productOne.containsIngredient(new Ingredient("argan oil")));
   }
