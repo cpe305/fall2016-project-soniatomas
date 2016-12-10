@@ -105,9 +105,6 @@ public class ProductHistoryTest {
     assertEquals(0.0, retrievedProductAgain.getRating().getSystemRating(), 0.00);
     assertEquals(7.5, retrievedProductAgain.getRating().getUserRating(), 0.00);
     
-    
-    
-    
   }
   
   
