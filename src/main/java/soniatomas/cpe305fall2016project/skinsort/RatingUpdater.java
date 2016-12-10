@@ -25,11 +25,6 @@ public class RatingUpdater {
     return updateProductSystemRating(product);
   }
 
-  public void setProductsUserRating(Product product, Double userRating) {
-    product.getRating().setUserRating(userRating);
-    updateProductSystemRating(product);
-  }
-
   public void updateIngredientRatingsAfterRemovingProduct(Product product) {
     IngredientLogger ingredientLogger = SystemData.getInstance().getUser().getIngredientLogger();
     for (Ingredient ingredient : product.getIngredients()) {
@@ -63,7 +58,7 @@ public class RatingUpdater {
     }
     double newRating = 0.0;
     if (totalProducts != 0) {
-    newRating = ratingsTotal / totalProducts;
+      newRating = ratingsTotal / totalProducts;
     }
     ingredientToUpdate.getRating().setSystemRating(newRating);
     return newRating;
@@ -75,7 +70,6 @@ public class RatingUpdater {
     int totalIngredients = 0;
     for (Ingredient ingredient : product.getIngredients()) {
       Ingredient loggedIngredient = ingredientLogger.getIngredient(ingredient.getName());
-
       if (loggedIngredient != null) {
         if (loggedIngredient.getRating().getUserRating() > 0) {
           ratingsTotal += loggedIngredient.getRating().getUserRating();
@@ -84,7 +78,6 @@ public class RatingUpdater {
         totalIngredients++;
       }
     }
-
     double newRating = 0.0;
     if (totalIngredients != 0) {
       newRating = ratingsTotal / totalIngredients;

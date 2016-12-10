@@ -108,7 +108,7 @@ public class Rating {
   }
   
   public boolean removeReference(String brand, String name) {
-    String reference = brand + ", " + name;
+    String reference = brand + "," + name;
     return removeReference(reference);
   }
   
@@ -126,13 +126,12 @@ public class Rating {
     return references;
   }
   public boolean containsReference(String brand, String name) {
-    String referenceValue = brand.toLowerCase() + name.toLowerCase();
-    
+    String referenceValue = brand.toLowerCase() + "," + name.toLowerCase();
     return containsReference(referenceValue);
   }
   
   public void addReference(String brand, String name) {
-    String reference = brand.toLowerCase() + ", " + name.toLowerCase();
+    String reference = brand.toLowerCase() + "," + name.toLowerCase();
     references.add(reference);
   }
 
