@@ -36,7 +36,7 @@ public class SystemData {
     return productOne;
   }
   public void setProductTwo(Product productTwo) {
-    this.productOne = productTwo;
+    this.productTwo = productTwo;
   }
   
   public Product getProductTwo() {

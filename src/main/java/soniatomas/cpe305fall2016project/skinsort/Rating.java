@@ -113,7 +113,6 @@ public class Rating {
   }
   
   public boolean containsReference(String reference) {
-    boolean referenceFound = false;
     for (String referenceInList : references) {
       if (referenceInList.equals(reference)) {
         return true;  

@@ -29,12 +29,10 @@ public class RatingUpdater {
     IngredientLogger ingredientLogger = SystemData.getInstance().getUser().getIngredientLogger();
     for (Ingredient ingredient : product.getIngredients()) {
       Ingredient ingredientToUpdate = ingredientLogger.getIngredient(ingredient);
-      try {
+      if (ingredientToUpdate != null) {
         ingredientToUpdate.getRating().removeReference(product.getBrand(), product.getName());
         double newRating = updateIngredientSystemRating(ingredientToUpdate);
-        ingredient.getRating().setSystemRating(newRating);
-      } catch (NullPointerException e) {
-
+        ingredientToUpdate.getRating().setSystemRating(newRating);
       }
     }
   }
@@ -46,7 +44,8 @@ public class RatingUpdater {
     double ratingsTotal = 0;
     int totalProducts = 0;
     for (String reference : references) {
-      String data[] = reference.split(",");
+      String data[] = reference.split(","
+          + "");
       String brand = data[0].trim();
       String name = data[1].trim();
       Product product = productHistory.getProduct(brand, name);

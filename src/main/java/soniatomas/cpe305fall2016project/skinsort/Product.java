@@ -48,7 +48,7 @@ public class Product {
   }
 
   public String getName() {
-    return new String(name);
+    return name;
   }
 
   public void setName(String name) {
@@ -64,7 +64,7 @@ public class Product {
   }
   
   public String getCategory() {
-    return new String(category);
+    return category;
   }
 
   public void setCatergory(String category) {
@@ -72,7 +72,7 @@ public class Product {
   }
   
   public String getType() {
-    return new String(type);
+    return this.type;
   }
 
   public void setType(String type) {

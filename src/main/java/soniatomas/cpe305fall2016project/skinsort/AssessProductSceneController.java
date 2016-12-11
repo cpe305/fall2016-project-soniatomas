@@ -65,18 +65,17 @@ public class AssessProductSceneController implements Initializable {
     String category = null;
     String type = null;
     String brand = null;
+    
     try {
       category = categorySelect.getValue().trim();
     } catch(NullPointerException e) {
       category = categoryField.getText().trim();
-
     }
     
     try {
       type = typeSelect.getValue().trim();
     } catch(NullPointerException e) {
       type = typeField.getText().trim();
-
     }
     
     try {

@@ -12,25 +12,27 @@ public class ViewProductDataOperation implements Operation {
   public ViewProductDataOperation() {
     operationVariables = new HashMap<String, Object>();
   }
-  
+
   public HashMap<String, Object> getVariables() {
     return operationVariables;
   }
 
   public HashMap<String, Object> execute(HashMap<String, String> parameters) {
     Product product = SystemData.getInstance().getProductOne();
+
     RatingUpdater updater = new RatingUpdater();
     double systemRating = updater.updateProductSystemRating(product);
-    try {
-      product.getRating().setSystemRating(systemRating);
-    } catch (Exception e) {
-      
-    }
+    product.getRating().setSystemRating(systemRating);
+
     DataConverter dataConverter = new DataConverter();
-    Hashtable<String, String> productData= dataConverter.getProductData(product);
+    Hashtable<String, String> productData = dataConverter.getProductData(product);
     operationVariables.put("product_data", productData);
-    ObservableList<String> ingredientList = dataConverter.getObservableIngredientList(product.getIngredients());
+    ObservableList<String> ingredientList = dataConverter
+        .getObservableIngredientList(product.getIngredients());
     operationVariables.put("ingredient_list", ingredientList);
+
     return operationVariables;
+
   }
+
 }

@@ -16,7 +16,6 @@ public class ProductHistory {
   private Hashtable<String, String> brands;
   @Embedded
   private Hashtable<String, String> types;
-  
 
   /**
    * Constructor for ProductHistory Initializes class variable productHistory.
@@ -26,7 +25,7 @@ public class ProductHistory {
     this.categories = new Hashtable<String, String>();
     this.brands = new Hashtable<String, String>();
     this.types = new Hashtable<String, String>();
-    
+
   }
 
   /**
@@ -45,7 +44,7 @@ public class ProductHistory {
       brands.put(product.getType(), product.getType());
     }
     productHistory.add(product);
-    
+
   }
 
   /**
@@ -79,7 +78,13 @@ public class ProductHistory {
       if (productInList.getBrand().equals(brand) && productInList.getName().equals(name)) {
         return productHistory.remove(productInList);
       }
+      if (productHistory.size() == 0) {
+        this.categories = new Hashtable<String, String>();
+        this.brands = new Hashtable<String, String>();
+        this.types = new Hashtable<String, String>();
+      }
     }
+
     return false;
   }
 
@@ -94,13 +99,15 @@ public class ProductHistory {
   public List<String> getBrands() {
     return new ArrayList<String>(brands.values());
   }
+
   public List<String> getTypes() {
     return new ArrayList<String>(types.values());
   }
+
   public List<String> getCategories() {
     return new ArrayList<String>(categories.values());
   }
-  
+
   public boolean containsProduct(String brand, String name) {
     name = name.toLowerCase();
     brand = brand.toLowerCase();

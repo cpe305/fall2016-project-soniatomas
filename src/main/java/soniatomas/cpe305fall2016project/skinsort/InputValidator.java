@@ -5,11 +5,15 @@ import java.util.*;
 public class InputValidator {
 
   public List<String> ingredientInputStringToList(String input) {
-    String ingredientStrings[] = input.split(",.!?");
+    String ingredientStrings[] = input.split(",!?.");
+    ArrayList<String> ingredientList = new ArrayList<String>();
     for (int index = 0; index < ingredientStrings.length; index++) {
-      ingredientStrings[index] = ingredientStrings[index].trim().toLowerCase();
+      String ingredName = ingredientStrings[index].trim().toLowerCase();
+      if (ingredName != "") {
+        ingredientList.add(ingredName);
+      }
     }
-    return Arrays.asList(ingredientStrings);
+    return ingredientList;
   }
 
   public boolean isValidDoubleValue(String value) {

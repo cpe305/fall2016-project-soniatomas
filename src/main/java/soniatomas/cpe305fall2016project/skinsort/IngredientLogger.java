@@ -58,7 +58,5 @@ public class IngredientLogger {
       Collection<Ingredient> ingredientCollection = logger.values();
       ArrayList<Ingredient> listOfIngredients = new ArrayList<Ingredient>(ingredientCollection);
       return listOfIngredients;
-    }
-    
-    
+    } 
 }

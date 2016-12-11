@@ -38,15 +38,15 @@ public class AddProductOperation implements Operation {
         Ingredient newIngredient = new Ingredient(ingredient);
         product.addIngredient(newIngredient);
       }
+      
       user.getProductHistory().addProduct(product);
       
       RatingUpdater ratingUpdater = new RatingUpdater();
       double systemRating = ratingUpdater.findAddedProductSystemRating(product);
       product.getRating().setSystemRating(systemRating);
       
-      
       SystemData.getInstance().setProductOne(product);
-      if (DatabaseManager.getInstance().saveUpdatesToDatabae()) {
+      if (DatabaseManager.getInstance().saveUpdatesToDatabase()) {
         operationVariables.put("status", "SUCCESS");
       }
       else {

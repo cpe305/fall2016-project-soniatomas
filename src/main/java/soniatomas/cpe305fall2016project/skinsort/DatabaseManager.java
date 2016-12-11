@@ -42,9 +42,6 @@ public class DatabaseManager {
 
     } catch (Exception e) {
       errorInDatabase = true;
-      //System.out.println("ERROR IN DATABASE!! MADE IT HERE!!");
-      //SystemData systemData = SystemData.getInstance();
-      //systemData.setErrorInDatabase(true);
     }
 
   }
@@ -83,7 +80,7 @@ public class DatabaseManager {
     return false;
   }
   
-  public boolean saveUpdatesToDatabae() {
+  public boolean saveUpdatesToDatabase() {
     if (!errorInDatabase) {
       User user = SystemData.getInstance().getUser();
       Key<User> savedUser = datastore.save(user);

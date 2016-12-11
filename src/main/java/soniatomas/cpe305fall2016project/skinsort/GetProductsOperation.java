@@ -29,7 +29,7 @@ public class GetProductsOperation implements Operation {
       Product product = user.getProductHistory().getProduct(productBrand, productName);
       
       RatingUpdater ratingUpdater = new RatingUpdater();
-      double systemRating = ratingUpdater.findAddedProductSystemRating(product);
+      double systemRating = ratingUpdater.updateProductSystemRating(product);
       product.getRating().setSystemRating(systemRating);
       
       operationVariables.put("product", product);
@@ -38,6 +38,11 @@ public class GetProductsOperation implements Operation {
     if (productTwoName != null) {
       operationVariables.put("status", "SUCCESS");
       Product productTwo = user.getProductHistory().getProduct(productTwoBrand, productTwoName);
+      
+      RatingUpdater ratingUpdater = new RatingUpdater();
+      double systemRating = ratingUpdater.updateProductSystemRating(productTwo);
+      productTwo.getRating().setSystemRating(systemRating);
+      
       operationVariables.put("productTwo", productTwo);
       SystemData.getInstance().setProductTwo(productTwo);
     }
